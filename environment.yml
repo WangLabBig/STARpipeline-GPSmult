@@ -1,0 +1,45 @@
+name: prs
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  # System tools
+  - python=3.10
+  - pip
+  - wget
+  - curl
+  - unzip
+  - parallel
+  - datamash
+  - zstd
+  - htslib        # bgzip, tabix
+  - plink2
+  - csvtk
+  # R and all packages via conda-forge (pre-built, no compilation)
+  - r-base=4.3
+  - r-data.table
+  - r-matrix
+  - r-proc
+  - r-dplyr
+  - r-tidyr
+  - r-readr
+  - r-purrr
+  - r-tibble
+  - r-stringr
+  - r-magrittr
+  - r-r.utils
+  - r-foreach
+  - r-doparallel
+  - r-optparse
+  - r-docopt
+  - r-rio
+  - r-mass
+  - r-pacman
+  - r-bigsnpr
+  - r-biocmanager
+  # Python packages
+  - pip:
+    - pandas
+    - numpy
+    - scipy

@@ -93,7 +93,7 @@ formula=$(cat mixing_fomular.sh)
 
 csvtk -t join -f IID ${selected_scores} |
   KeyMapReplacer.py -p <(cat ${trainpheno}) -k1 -a NA -x |
-  Rscript ${SCRIPT_DIR}/GlmRegression.R -f "${pheno}~${formula}+${cov_formula}" -m ${method} -n "${pheno}~${cov_formula}" -r y |
+  Rscript ${SCRIPT_DIR}/GlmRegressiono.R -f "${pheno}~${formula}+${cov_formula}" -m ${method} -n "${pheno}~${cov_formula}" -r y |
   tee log/Layer2.Mix.log
 
 

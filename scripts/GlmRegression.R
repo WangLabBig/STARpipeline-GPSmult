@@ -44,22 +44,21 @@ df <- na.omit(read.table(file("stdin"),header = T,check.names=F))
 
 reg.formula <- opts$f
 
-if(is.null(N) == F){
-    full.vars <- all.vars(as.formula(reg.formula))
-    base.vars <- all.vars(as.formula(N))
-    target.vars <- setdiff(full.vars, base.vars)
+if (!"adjNormPRS" %in% colnames(df)) {
+    cat("(This parameter is not available)\n")
+    quit(save = "no", status = 0)
+}
 
-    for(target.var in target.vars){
-        if(target.var %in% colnames(df) && is.numeric(df[[target.var]])){
-            target.values <- df[[target.var]]
-            target.values <- target.values[!is.na(target.values)]
+target.values <- df[["adjNormPRS"]]
+target.values <- target.values[!is.na(target.values)]
 
-            if(length(target.values) == 0 || length(unique(target.values)) <= 1){
-                cat("(The PRS of this parameter is not available)\n")
-                quit(save = "no", status = 0)
-            }
-        }
-    }
+if (
+    length(target.values) == 0 ||
+    length(unique(target.values)) <= 1 ||
+    all(target.values == 0)
+) {
+    cat("(It is not available, only zero value, skip)\n")
+    quit(save = "no", status = 0)
 }
 
 cat("\n")

@@ -42,7 +42,7 @@ do
         wcut -t "${pheno},${prs}_MulAnc_PRS,${cov}" |
         Rscript ${SCRIPT_DIR}/Residuals.R -f "${prs}_MulAnc_PRS~PC1+PC2+PC3+PC4+PC5+PC6+PC7+PC8+PC9+PC10" -t adjPRS |
         Rscript ${SCRIPT_DIR}/Scale.R -c adjPRS -t adjNormPRS |
-        Rscript ${SCRIPT_DIR}/GlmRegression.R -f "${pheno}~adjNormPRS+${cov_formula}" -m ${method} -n "${pheno}~${cov_formula}" -r y |
+        Rscript ${SCRIPT_DIR}/GlmRegressiono.R -f "${pheno}~adjNormPRS+${cov_formula}" -m ${method} -n "${pheno}~${cov_formula}" -r y |
         tee log/${prs}-multi.train.log
 
     # 6-2. Evaluate the performance of the multi-ancestry PRS in the testing set.
@@ -51,7 +51,7 @@ do
         wcut -t "${pheno},${prs}_MulAnc_PRS,${cov}" |
         Rscript ${SCRIPT_DIR}/Residuals.R -f "${prs}_MulAnc_PRS~PC1+PC2+PC3+PC4+PC5+PC6+PC7+PC8+PC9+PC10" -t adjPRS |
         Rscript ${SCRIPT_DIR}/Scale.R -c adjPRS -t adjNormPRS |
-        Rscript ${SCRIPT_DIR}/GlmRegression.R -f "${pheno}~adjNormPRS+${cov_formula}" -m ${method} -n "${pheno}~${cov_formula}" -r y |
+        Rscript ${SCRIPT_DIR}/GlmRegressiono.R -f "${pheno}~adjNormPRS+${cov_formula}" -m ${method} -n "${pheno}~${cov_formula}" -r y |
         tee log/${prs}-multi.test.log
 
 done

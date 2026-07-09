@@ -74,7 +74,18 @@ do
     source ${Layer1_DIR}/${tt}/config.sh
     while read trait
     do
+        prs_file="${PRS_DIR}/${trait}-sscore.gz"
 
+        if [ ! -e "${prs_file}" ]; then
+            echo "${prs_file} does not exist"
+            continue
+        fi
+
+        if [ "$(zcat "${prs_file}" | wc -l)" -le 1 ]; then
+            echo "${prs_file} is empty"
+            continue
+        fi
+        
         while read parameter
         do
 

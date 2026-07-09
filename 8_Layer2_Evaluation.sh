@@ -38,7 +38,7 @@ zcat MixPRS/${pheno}-MulAnc.MultiTraits.sscore.gz |
   wcut -t "${pheno},PRS,$cov" |
   Rscript ${SCRIPT_DIR}/Residuals.R -f 'PRS~PC1+PC2+PC3+PC4+PC5+PC6+PC7+PC8+PC9+PC10' -t  adjPRS |
   Rscript ${SCRIPT_DIR}/Scale.R -c adjPRS -t adjNormPRS |
-  Rscript ${SCRIPT_DIR}/GlmRegression.R -f "${pheno}~adjNormPRS+${cov_formula}" -m ${method} -n "${pheno}~${cov_formula}" -r y |
+  Rscript ${SCRIPT_DIR}/GlmRegressiono.R -f "${pheno}~adjNormPRS+${cov_formula}" -m ${method} -n "${pheno}~${cov_formula}" -r y |
   tee log/Layer2.train.log
 
 
@@ -49,5 +49,5 @@ zcat MixPRS/${pheno}-MulAnc.MultiTraits.sscore.gz |
   wcut -t "${pheno},PRS,$cov" |
   Rscript ${SCRIPT_DIR}/Residuals.R -f 'PRS~PC1+PC2+PC3+PC4+PC5+PC6+PC7+PC8+PC9+PC10' -t  adjPRS |
   Rscript ${SCRIPT_DIR}/Scale.R -c adjPRS -t adjNormPRS |
-  Rscript ${SCRIPT_DIR}/GlmRegression.R -f "${pheno}~adjNormPRS+${cov_formula}" -m ${method} -n "${pheno}~${cov_formula}" -r y |
+  Rscript ${SCRIPT_DIR}/GlmRegressiono.R -f "${pheno}~adjNormPRS+${cov_formula}" -m ${method} -n "${pheno}~${cov_formula}" -r y |
   tee log/Layer2.test.log

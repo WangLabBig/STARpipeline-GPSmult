@@ -2,13 +2,13 @@
 
 To generate simulated phenotypes with realistic genetic architectures, we constructed individual-level BMI and type 2 diabetes (T2D) phenotypes based on empirical polygenic risk scores (PRS). The observed BMI-PRS and T2D-PRS values were standardized to have a mean of zero and a variance of one before simulation.
 
-For BMI, we assumed a SNP-based heritability ($h^2$) of 0.50 and specified that the empirical BMI-PRS explained 18% of the total phenotypic variance ((R^2_{PRS}=0.18)). The PRS contribution was modeled as:
+For BMI, we assumed a SNP-based heritability ($h^2$) of 0.50 and specified that the empirical BMI-PRS explained 18% of the total phenotypic variance ($R^2_{PRS}=0.18$). The PRS contribution was modeled as:
 
 
 $$G_{PRS}=PRS_{BMI}\times\sqrt{R^2_{PRS}}$$
 
 
-so that the variance explained by the PRS component was equal to the predefined (R^2_{PRS}). The remaining genetic component not captured by the PRS was simulated independently from a normal distribution with variance:
+so that the variance explained by the PRS component was equal to the predefined ($R^2_{PRS}$). The remaining genetic component not captured by the PRS was simulated independently from a normal distribution with variance:
 
 $$
 Var(G_{residual})=h^2-R^2_{PRS}=0.50-0.18=0.32
@@ -26,13 +26,13 @@ $$
 L_{BMI}=G_{PRS}+G_{residual}+E
 $$
 
-The resulting continuous liability score was transformed to an observed BMI scale using population parameters from European adults (mean BMI = 27.3 kg/m² and standard deviation = 4.75 kg/m²):
+The resulting continuous liability score was transformed to an observed BMI scale using population parameters from European adults (mean BMI = 27.3 kg/$m^2$ and standard deviation = 4.75 kg/$m^2$):
 
 $$
 BMI=L_{BMI}\times4.75+27.3
 $$
 
-For T2D, we applied a similar liability-based framework. We assumed a total heritability of 0.50 and a PRS-explained variance of 0.10 ((R^2_{PRS}=0.10)). The residual genetic component was simulated with variance:
+For T2D, we applied a similar liability-based framework. We assumed a total heritability of 0.50 and a PRS-explained variance of 0.10 ($R^2_{PRS}=0.10$). The residual genetic component was simulated with variance:
 
 $$
 Var(G_{residual})=0.50-0.10=0.40

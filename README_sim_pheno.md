@@ -4,9 +4,9 @@ To generate simulated phenotypes with realistic genetic architectures, we constr
 
 For BMI, we assumed a SNP-based heritability ((h^2)) of 0.50 and specified that the empirical BMI-PRS explained 18% of the total phenotypic variance ((R^2_{PRS}=0.18)). The PRS contribution was modeled as:
 
-[
-G_{PRS}=PRS_{BMI}\times\sqrt{R^2_{PRS}}
-]
+
+$$G_{PRS}=PRS_{BMI}\times\sqrt{R^2_{PRS}}$$
+
 
 so that the variance explained by the PRS component was equal to the predefined (R^2_{PRS}). The remaining genetic component not captured by the PRS was simulated independently from a normal distribution with variance:
 

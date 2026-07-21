@@ -1,6 +1,8 @@
 If you use this protocol in your research work, please cite the following papers:
-- 10.1016/j.cmet.2026.02.009
-- (STAR pipeline)
+- Kim, M.S., Chen, Q., Sui, Y., Yang, X., Wang, S., Weng, L.-C., Cho, S.M.J., Koyama, S., Zhu, X., Yu, K., et al. (2026). Metabolic polygenic risk scores for prediction of obesity, type 2 diabetes, and related morbidities. Cell Metab. https://doi.org/10.1016/j.cmet.2026.02.009.
+- Patel, A.P., Wang, M., Ruan, Y., Koyama, S., Clarke, S.L., Yang, X., Tcheandjieu, C., Agrawal, S., Fahed, A.C., Ellinor, P.T., et al. (2023). A multi-ancestry polygenic risk score improves risk prediction for coronary artery disease. Nat. Med. 29, 1793–1803. https://doi.org/10/gsfv48.
+
+Example data, code, and offline Docker image archive (.tar) and a Singularity image (.sif) are available for download from Zenodo (https://doi.org/10.5281/zenodo.20841307).
 
 =====================================================================
 ### Prepare

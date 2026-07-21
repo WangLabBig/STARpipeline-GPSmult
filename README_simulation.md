@@ -1,3 +1,8 @@
+### Simulation of genotypes based on Hapnest
+- Details access: https://github.com/intervene-EU-H2020/synthetic_data
+- configure file is "config.yaml"
+
+
 ### Simulation of phenotypes based on polygenic risk scores
 
 To generate simulated phenotypes with realistic genetic architectures, we constructed individual-level BMI and type 2 diabetes (T2D) phenotypes based on empirical polygenic risk scores (PRS). The observed BMI-PRS and T2D-PRS values were standardized to have a mean of zero and a variance of one before simulation.

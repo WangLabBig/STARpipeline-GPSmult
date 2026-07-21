@@ -5,6 +5,8 @@
 
 ### Simulation of phenotypes based on polygenic risk scores
 
+code: pheno_sim.py
+
 To generate simulated phenotypes with realistic genetic architectures, we constructed individual-level BMI and type 2 diabetes (T2D) phenotypes based on empirical polygenic risk scores (PRS). The observed BMI-PRS and T2D-PRS values were standardized to have a mean of zero and a variance of one before simulation.
 
 For BMI, we assumed a SNP-based heritability ($h^2$) of 0.50 and specified that the empirical BMI-PRS explained 18% of the total phenotypic variance ($R^2_{PRS}=0.18$). The PRS contribution was modeled as:
